@@ -1,7 +1,8 @@
 #!/bin/bash
+curl https://elegansvariation.org/strain/strain_data.tsv > strain_data.tsv
 #the count of the isotype number
-curl https://elegansvariation.org/strain/strain_data.tsv | cut -f3 | sed "1d" | sort | uniq -c | wc -l
+cat strain_data.tsv| cut -f 3 | sed "1d" | sort | uniq -c | wc -l
 #the count of the strain number
-curl https://elegansvariation.org/strain/strain_data.tsv | cut -f1 | sed "1d" | wc -l
+cat strain_data.tsv | cut -f 1 | sed "1d" | wc -l
 #to count the number of strains for each isotype
-curl https://elegansvariation.org/strain/strain_data.tsv | cut -f3 | sed "1d" | uniq -c
+cat strain_data.tsv | cut -f 3 | sed "1d" | uniq -c
