@@ -1,4 +1,5 @@
 #!/bin/bash
+#to download the origin data from anderson lab
 curl https://elegansvariation.org/strain/strain_data.tsv > strain_data.tsv
 #the count of the isotype number
 cat strain_data.tsv | cut -f 3 | sed "1d" | sort | uniq -c | wc -l
